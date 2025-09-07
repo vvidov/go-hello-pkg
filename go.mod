@@ -1,4 +1,4 @@
-module github.com/vvidov/go-hello-pkg
+module github.com/vvidov/go-hello-pkg/v1 
 
 go 1.21
 
