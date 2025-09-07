@@ -1,18 +1,31 @@
 package hello
 
 import (
-    "testing"
-    "github.com/stretchr/testify/require"
+	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestHello(t *testing.T) {
-    // Arrange
-    want := "hello wolrd"
-    assert := require.New(t)
+	assert := require.New(t)
+	testCases := []struct {
+		name string
+		want string
+	}{
+		{"World", "Hello, World"},
+		{"Alice", "Hello, Alice"},
+		{"Bob", "Hello, Bob"},
+		{"", "Hello, "},
+	}
+	for _, tc := range testCases {
+		// Arrange
+		name := tc.name
+		want := tc.want
 
-    // Act
-    got := Hello()
+		// Act
+		got := Hello(name)
 
-    // Assert
-    assert.Equal(want, got, "Hello() should return 'hello wolrd'")
+		// Assert
+		assert.Equal(want, got, "Hello(%q) should return %q", name, want)
+	}
 }
