@@ -16,6 +16,7 @@ func TestHello(t *testing.T) {
 		{"Alice", "Hello, Alice"},
 		{"Bob", "Hello, Bob"},
 		{"", "Hello, "},
+		{"Oliver", "Hello, Oli"},
 	}
 	for _, tc := range testCases {
 		// Arrange
